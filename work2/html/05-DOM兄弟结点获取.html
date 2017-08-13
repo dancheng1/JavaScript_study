@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>兄弟结点获取</h2>
+    <ul>
+        <li>red</li>
+        <li>blue</li>
+        <li>green</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    //firstChild、lastChild、nextSibling、oreviousSibling、childNodes
+    var ull = document.getElementsByTagName('ul').item(0);
+    console.log(ull.childNodes);
+    console.log(ull.childNodes.length);
+    console.log('---------------------------------------------------------');
+    console.log(ull.firstChild);    //在火狐中第一个是空白结点
+    console.log(ull.firstChild.nextSibling);      //第二个结点才是li结点
+    console.log('---------------------------------------------------------');
+    console.log(ull.lastChild);
+    console.log(ull.lastChild.previousSibling);
+</script>

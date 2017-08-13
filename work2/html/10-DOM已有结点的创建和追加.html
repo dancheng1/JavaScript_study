@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>结点的创建和追加</h2>
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+    <ul>
+        <li mean="饿">orange</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    //给第二个ul追加页面已有节点：blue被追加进来
+    //被追加节点要发生物理位置移动现象（节点的个数是固定的，只有一个）
+    var blue = document.getElementsByTagName('li')[1];
+    var second_ul = document.getElementsByTagName('ul')[1];
+    second_ul.appendChild(blue);
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var age = 20;
+        function f1() {
+            var height = 170;
+            console.log(age);   //内环境访问外环境 变量
+        }
+        f1();
+        console.log(height);    //外环境访问内环境 变量  (不允许)
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

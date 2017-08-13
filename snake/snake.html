@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>新建网页</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <script type="text/javascript">
+        var mytime = "";//setInterval的返回值接收变量(全局)
+
+
+        //① 创建操作界面
+        function Map(){
+            var wd = 800;
+            var ht = 400;
+
+            this.showmap = function(){
+                //创建操作界面
+                var mian = document.createElement('div');
+                mian.style.width = wd+"px";
+                mian.style.height = ht+"px";
+                mian.style.backgroundColor = "pink";
+                mian.style.backgroundImage = "url(./12.jpg)";
+                document.body.appendChild(mian);
+            }
+        }
+        //② 创建食物
+        function Food(){
+            var len = 20;
+            this.fleft = 0;//食物x轴坐标
+            this.ftop  = 0;//食物y轴坐标
+            this.pice = null;  //存储食物的成员属性
+
+            this.showfood = function(){
+                if(this.pice === null){
+                    this.pice =  document.createElement('div');
+                    this.pice.style.width = this.pice.style.height = len+"px";
+                    this.pice.style.backgroundColor = "green";
+
+                    //绝对定位设置
+                    this.pice.style.position = "absolute";
+                    
+                    document.body.appendChild(this.pice);
+                }
+
+                //食物定位坐标必须是20的正数倍信息
+                //这样坐标有“权”的划分
+                //横坐标权：0---39
+                //纵坐标权：0---19
+                //Math.random()极端情况等于0 无限接近1
+                //给食物设置随机权信息，进而设置随机坐标
+                this.fleft  = Math.floor(Math.random()*40);
+                this.ftop   = Math.floor(Math.random()*20);
+                this.pice.style.left = this.fleft*len+"px";
+                this.pice.style.top = this.ftop*len+"px";
+            }
+        }
+
+        //③ 绘制小蛇
+        function Snake(){
+            var len = 20;
+            this.section = [[0,1,'green',null],[1,1,'green',null],[2,1,'green',null],[3,1,'red',null]];//小蛇蛇节的二维数组
+            this.redirect = "right";//小蛇移动方向
+
+            //绘制小蛇
+            this.showsnake = function(){
+                for(var i=0; i<this.section.length; i++){
+                    if(this.section[i][3]===null){
+                        //创建div蛇段
+                        this.section[i][3] = document.createElement('div');
+                        this.section[i][3].style.width = this.section[i][3].style.height = len+"px";
+                        this.section[i][3].style.backgroundColor = this.section[i][2];
+                        //定位
+                        this.section[i][3].style.position = "absolute";
+                        
+                        //追加蛇段
+                        document.body.appendChild(this.section[i][3]);
+                    }
+
+                    this.section[i][3].style.left = this.section[i][0]*len+"px";
+                    this.section[i][3].style.top = this.section[i][1]*len+"px";
+                }
+            }
+            //小蛇移动
+            this.movesnake = function(){
+                for(var i=0; i<this.section.length-1; i++){
+                    //下一个段的坐标赋值给上一个段
+                    this.section[i][0] = this.section[i+1][0];
+                    this.section[i][1] = this.section[i+1][1];
+                }
+                
+                //处理头部
+                if(this.redirect=="right"){
+                    this.section[this.section.length-1][0] += 1;
+                }else if (this.redirect=="left"){
+                    this.section[this.section.length-1][0] -= 1;
+                }else if (this.redirect=="up"){
+                    this.section[this.section.length-1][1] -= 1;
+                }else if (this.redirect=="down"){
+                    this.section[this.section.length-1][1] += 1;
+                }
+                
+
+                //判断头部坐标是否越界
+                var snakeXhead = this.section[this.section.length-1][0];
+                var snakeYhead = this.section[this.section.length-1][1];
+                if(snakeXhead>39 || snakeXhead<0 || snakeYhead>19 || snakeYhead<0){
+                    alert('game over');
+                    clearInterval(mytime);
+                    return false;
+                }
+
+                //小蛇不能吃到自己，蛇头坐标与各个蛇段坐标做比较
+                for(var m=0; m<this.section.length-1; m++){
+                    if(snakeXhead==this.section[m][0] &&snakeYhead==this.section[m][1]){
+                        alert('game over kill you by yourself');
+                        clearInterval(mytime);
+                        return false;
+                    }
+                }
+
+                //小蛇碰到食物
+                var foodX = food.fleft;
+                var foodY = food.ftop;
+                if(snakeXhead==foodX && snakeYhead==foodY){
+                    //吃食物，增加蛇段
+                    var newduan = [this.section[0][0],this.section[0][1],'green',null];
+                    this.section.unshift(newduan);
+
+                    //生成新食物
+                    food.showfood();
+                }
+                
+
+                //根据新坐标重新绘制小蛇
+                this.showsnake();
+            }
+
+        }
+
+        window.onload = function(){
+            //创建操作界面
+            map = new Map();
+            map.showmap();
+
+            //创建食物
+            food = new Food();
+            food.showfood();
+
+            //创建小蛇
+            snake = new Snake();
+            snake.showsnake();
+
+            //小蛇移动(内部的snake需要设置为全局变量)
+            mytime = setInterval("snake.movesnake()",200);
+
+            //给document设置键盘事件，通过“事件对象”感知“上下左右”键的触发
+            document.onkeyup = function(evt){
+                var evnt = evt ? evt : window.event;
+                var num = evnt.keyCode;
+                if(num==37){
+                    snake.redirect = "left";
+                }else if (num==38){
+                    snake.redirect = "up";
+                }else if (num==39){
+                    snake.redirect = "right";
+                }else if (num==40){
+                    snake.redirect = "down";
+                }
+            }
+        }
+        </script>
+
+        <style type="text/css">
+        body {margin:0;}
+        </style>
+    </head>
+
+
+    <body>
+
+    </body>
+</html>

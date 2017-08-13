@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {width: 400px; height: 300px; background: lightblue;}
+        p {width: 400px; height: 150px; background: lightgreen;}
+        span {background: pink;}
+    </style>
+</head>
+<body>
+    <h2>事件流</h2>
+    <div>
+        <p>
+            <span>I am span</span>
+        </p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var dv = document.getElementsByTagName('div')[0];
+    var pp = document.getElementsByTagName('p')[0];
+    var sp = document.getElementsByTagName('span')[0];
+    //addEventListener（类型， 处理， true捕捉/false冒泡）
+    sp.addEventListener('click', function (evt) {
+        console.log('span tag');
+        evt.stopPropagation();   //阻止事件流产生
+    }, false);
+    pp.addEventListener('click', function (evt) {
+        console.log('p tag');
+        evt.stopPropagation();   //阻止事件流产生
+    }, false)
+    dv.addEventListener('click', function (evt) {
+        console.log('div tag');
+        evt.stopPropagation();   //阻止事件流产生
+    }, false)
+</script>

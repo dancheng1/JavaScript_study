@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //123213@qq.com
+        //dancheng@163.com
+        //_tom123.77@hahaha.com
+
+        var reg = /^\w[a-zA-Z0-9_\.]{4,9}@\w+(\.[a-z]+)+$/;
+        var str = "98239223@qq.com";    //结果：["98239223@qq.com", ".com", index: 0, input: "98239223@qq.com"]
+        var str = "sdasdasd";    //结果：null
+        var str = "_tom123.77@hotmail.com";    //结果：["_tom123.77@hotmail.com", ".com", index: 0, input: "_tom123.77@hotmail.com"]
+
+        var res = str.match(reg);
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

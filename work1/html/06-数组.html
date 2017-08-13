@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //声明
+        //如果一个数组的下标是自定义的，那么该元素就是对象元素（非数组）
+        //数组在JavaScript里是对象的一部分
+        var color = ['red', 'blue', 'green'];
+        console.log(color);
+        console.log(color[1]);
+
+        var animal = new Array('tiger', 'wolf', 'dog');
+        console.log(animal[2]);
+
+        var food = new Array(3);
+        food[0] = "bread";
+        food[1] = "drink";
+        food[2] = "mile";
+        food['yuan'] = '元宵';
+        console.log(food);
+        //对象访问成员：对象[成员名] 或 对象.成员名
+        //数组访问元素：数组[下标]
+        console.log(food.yuan);
+        console.log(food['yuan']);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

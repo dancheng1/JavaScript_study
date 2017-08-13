@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //正向匹配
+        var reg = /hello(?=\d{3})/;
+        var str = "hello123";        //结果：["hello", index: 0, input: "hello123"]
+        var str = "hello123123123213212";   //结果：["hello", index: 0, input: "hello123123123213212"]
+
+        var reg = /[a-z]+(?==)/g;
+        var str = "http://www.dancheng1.com/index.php?name=dancheng&age=21&addr=jilin";        //结果：["hello", index: 0, input: "hello123"]
+
+        //正向不匹配
+        //数字后面不要出现字母
+        var reg = /\d{4}(?![a-z])/;
+        var str = "1997xianggang";    //结果：null
+        var str = "1999aomen";       //结果：null
+        var str = "2000###";        //结果：["2000", index: 0, input: "2000###"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        //console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

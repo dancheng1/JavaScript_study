@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /[wqsf9]+/;
+        var str = "wsf999qqqq";//结果：["wsf999qqqq", index: 0, input: "wsf999qqqq"]
+        var str = "word";  //结果：["w", index: 0, input: "word"]
+
+        var reg = /[^wqsf9]+/;      //拖字符表示出了wqsf9的内容，其他的都给匹配
+        var str = "word";        //结果：["ord", index: 1, input: "word"]
+
+        var reg = /[^a-f]+/;      //拖字符表示出了a-f的内容，其他的都给匹配
+        var str = "word";        //结果：["wor", index: 0, input: "word"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        //console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

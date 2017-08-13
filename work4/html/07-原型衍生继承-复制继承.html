@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var dog = {eat:'吃骨头', hobby:'看家'};
+        var wolf = {tail:'笔直的尾巴', eye:'闪闪发光'};
+
+        function Animal() {
+            this.color = "yellow";
+            this.leg = 4;
+        }
+        Animal.prototype.extend = function (obj) {
+            //遍历obj对象
+            for(var k in obj){
+                if(!this.hasOwnProperty(k)){
+                    this[k] = obj[k];
+                }
+            }
+        }
+
+        var kitty = new Animal();
+        kitty.extend(dog);
+        console.log(kitty);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

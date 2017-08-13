@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function jiazai() {
+            var dv = document.getElementsByTagName('div')[0];
+            dv.onclick = function () {
+                this.style.backgroundColor = "pink";
+            }
+        }
+        function f1() {
+            console.log('加载中...');
+        }
+        window.onload = jiazai;
+
+        window.onload = function () {
+            jiazai();
+            f1();
+        }
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>加载事件</h2>
+    <div>
+        操作加载事件
+    </div>
+</body>
+</html>

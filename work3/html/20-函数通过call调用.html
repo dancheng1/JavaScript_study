@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var cat = {name:'tom', climb:function (addr, time) {console.log(this.name + '在' + addr + '时间：' + time + '爬树');}};
+        var dog = {name:'旺财', hobby:'看家'};
+
+        //dog调用climb方法，  方法名称.call(方法内部this指引， 参数1， 参数2， 参数n....)
+        cat.climb.call(dog, '后院', '上午');
+        cat.climb.call(cat, '前山', '晚上');
+
+
+        /*var cat = {name:'tom', climb:function () {console.log(this.name + '在爬树');}};
+        var dog = {name:'旺财', hobby:'看家'};
+
+        //dog调用climb方法，  方法名称.call(方法内部this指引)
+        cat.climb.call(dog);
+        cat.climb.call(cat);*/
+    </script>
+</head>
+<body>
+    <h2>创建子集页面</h2>
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+</body>
+</html>

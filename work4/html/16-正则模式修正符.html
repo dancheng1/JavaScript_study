@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /[a-z]/;
+        var str = "helloBEIJING";
+        //结果：["h", index: 0, input: "hello BEIJING"]
+
+        var reg = /[a-z]+/;
+        var str = "helloBEIJING";
+        //结果：["hello", index: 0, input: "hello BEIJING"]
+
+        var reg = /[a-z]+/i;    //i忽略大小写
+        var str = "helloBEIJING";
+        //结果：["helloBEIJING", index: 0, input: "helloBEIJING"]
+
+
+        var reg = /[0-9]+/;
+        var str = "2015-03-23 17:30:20";
+        //结果：["2015", index: 0, input: "2015-03-23 17:30:20"]
+
+        var reg = /[0-9]+/g;
+        var str = "2015-03-23 17:30:20";
+        //结果：(6) ["2015", "03", "23", "17", "30", "20"]
+
+        var reg = /[a-z]+[0-9]+/;
+        var str = "XiangGang1997Aomen1999";
+        //结果：["ang1997", index: 6, input: "XiangGang1997Aomen1999"]
+
+        var reg = /[a-z]+[0-9]+/ig;
+        var str = "XiangGang1997Aomen1999";
+        //结果：(2) ["XiangGang1997", "Aomen1999"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

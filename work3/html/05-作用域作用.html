@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //变量的作用域是“声明时”决定的，而不是运行时
+        var food = "milk";
+        function f1() {
+            //访问food变量，当前环境没有food变量，但是其外部环境有该变量
+            console.log(food);
+        }
+        function f2() {
+            var food = "brand";
+            f1();
+        }
+        f2();
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

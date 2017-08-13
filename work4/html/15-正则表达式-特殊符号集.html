@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /(go)+gle/;
+        var str = "gogogogogle";
+        //结果：["gogogogogle", "go", index: 0, input: "gogogogogle"]
+        var str = "gooooogle";
+        //结果：null
+
+        var reg = /<span>(.*)<\/span>/;    //()称为模式单元
+        var str = "<div><span>杨勇</span><a>yangyong@163.com</a></div>";
+        //结果：["gogogogogle", "go", index: 0, input: "gogogogogle"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

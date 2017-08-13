@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>事件流</h2>
+    <div>
+        操作事件对象
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //形参evt代表事件对象
+    function clk(evt) {
+        //console.log(evt);
+        var  evnt = evt ? evt : window.event;   //兼容事件对象获取
+        alert(evnt);
+        this.style.backgroundColor = "green";
+    }
+    var dv = document.getElementsByTagName('div')[0];
+    dv.addEventListener('click', clk);
+</script>

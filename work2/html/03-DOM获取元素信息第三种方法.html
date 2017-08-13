@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>获取元素结点</h2>
+    <input type="text" name="username" id="username" value="tom" /> <br/>
+    <input type="text" name="useremail" id="useremail" value="tom@163.com"> <br/>
+    <div>today is very good</div>
+</body>
+</html>
+<script type="text/javascript">
+    //3、document.getElementsByName(), name属性获得元素结点，此方法涉及到浏览器兼容问题
+    var username = document.getElementsByName('username');
+    console.log(username);
+    console.log(username[0]);
+    console.log(username.item(0));
+</script>

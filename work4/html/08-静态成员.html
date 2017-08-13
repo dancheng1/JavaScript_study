@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function Cat() {
+            this.color = "yellow";
+            this.age = 3;
+        }
+        var kitty = new Cat();
+        //以上代码有两个对象：kitty, Cat
+        //给Cat对象丰富成员
+        Cat.addr = "波斯";
+        Cat.climb = function () { console.log('会爬树'); }
+
+
+        console.log(Cat.addr);
+        Cat.climb();
+        console.log(kitty.addr);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

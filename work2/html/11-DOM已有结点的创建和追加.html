@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>结点的创建和追加</h2>
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+    <ul>
+        <li mean="饿">orange</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    /**
+     * orange追加给第一个ul，并设置到blue的前边
+     * 父节点.indsertBefore(newnode.oldnode);把结点追加到oldnode结点前边
+     * 父节点.replaceChild(newnode, oldnode);把新节点替换老结点
+     */
+    var blue = document.getElementsByTagName('li')[1];
+    var orange = document.getElementsByTagName('li')[3];
+    var first_ul = document.getElementsByTagName('ul')[0];
+    //first_ul.appendChild(orange);
+    //first_ul.insertBefore(orange, blue);   //orange放在blue的前边
+    first_ul.replaceChild(orange, blue);
+</script>

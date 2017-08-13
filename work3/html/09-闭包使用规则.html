@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //同一个闭包机制，生成多个闭包，他们彼此独立，并且有个性化信息
+        function f1(n) {
+            function f2() {
+                console.log(n);
+            }
+            return f2;
+        }
+        var ff = f1(100);
+        ff();
+        var fa = f1(120);
+        fa();
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

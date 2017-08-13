@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /([0-9]+-([0-9]+-[0-9]+)) ((([0-9]+):[0-9]+):[0-9]+)/;
+        var str = "2017-08-12 15:48:30";
+        //结果：(6) ["2017-08-12 15:48:30", "2017-08-12", "08-12", "15:48:30", "15:48", "15", index: 0, input: "2017-08-12 15:48:30"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        //console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

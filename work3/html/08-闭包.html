@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //简单闭包
+        function f1() {
+            var age = 20;
+            var height = 180;
+            function f2() {
+                console.log('年龄' + age + "-身高" + height);
+            }
+            return f2;
+        }
+        var ff = f1();
+        ff();
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

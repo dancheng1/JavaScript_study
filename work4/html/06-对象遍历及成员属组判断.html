@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var cat = {age:3,weapon:'伶牙俐齿'};
+
+        function Tiger(){
+            this.color = "yellow";
+            this.act = function(){
+                console.log('猛虎扑食');
+            }
+        }
+        Tiger.prototype = cat;
+
+        var north = new Tiger();
+        for(var k in north){
+            if(north.hasOwnProperty(k))
+                console.log("本身成员："+k);
+            else
+                console.log("非本身成员："+k);
+        }
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

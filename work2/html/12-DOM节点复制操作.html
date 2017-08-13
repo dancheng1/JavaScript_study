@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>节点删除操作</h2>
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+    <ul>
+        <li mean="饿">orange</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    //删除green节点
+    var green = document.getElementsByTagName('li')[2];
+    green.parentNode.removeChild(green);
+</script>

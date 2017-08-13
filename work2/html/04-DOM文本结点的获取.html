@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>文本结点获取</h2>
+    <input type="text" id="username" value="tom" /> <br/>
+    <input type="text" id="useremail" value="tom@163.com"> <br/>
+    <div>today is very good</div>
+</body>
+</html>
+<script type="text/javascript">
+    //1、获得div内部的文本结点
+    var dv = document.getElementsByTagName('div')[0];
+    //firstChild获得第一个子节点/lastChild获得第二个子节点
+    console.log(dv.firstChild);
+    console.log(dv.firstChild.wholeText);   //获得文本信息
+</script>

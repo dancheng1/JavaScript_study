@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /[0-9]+/;
+        var str = "2017-8-12";
+        //结果：["2017", index: 0, input: "2017-8-12"]
+
+        var reg = /go*gle/;
+        var str = "goooooogle";
+        //结果：["goooooogle", index: 0, input: "goooooogle"]
+
+        var reg = /[0-9]*/;
+        var str = "today is 222";
+        //结果：["", index: 0, input: "today is 222"]
+        var str = "222 today is";
+        //结果：["222", index: 0, input: "222 today is"]
+
+        var reg = /wo?rld/;
+        var str = "woorld";
+        //结果：null
+        var str = "wrld";
+        //结果：["wrld", index: 0, input: "wrld"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

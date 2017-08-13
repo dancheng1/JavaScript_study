@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function f1() {
+            //console.log(arguments.length);   //获取参数的个数
+            var len = arguments.length;
+            if(len == 0){
+                console.log('个人信息');
+            } else if(len == 1){
+                console.log('个人信息：名字：' + arguments[0]);
+            } else if(len == 2){
+                console.log('个人信息：名字：' + arguments[0] + '  年龄' + arguments[1]);
+            }
+        }
+        f1('dancheng');
+        f1('dancheng', 20);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

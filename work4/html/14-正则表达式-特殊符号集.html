@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /^banana/;    //出现在目标开头
+        var str = "monkey like banana";
+        //结果：null
+        var str = "banana like monkey";
+        //结果：["banana", index: 0, input: "banana like monkey"]
+
+        var reg = /banana$/;    //出现在目标结尾
+        var str = "monkey like banana";
+        //结果：["banana", index: 12, input: "monkey like banana"]
+        var str = "banana like monkey";
+        //结果：null
+
+        var reg = /13[0-9]{9}/;    //{9}严格出现九次
+        var str = "13837264738";
+        //结果：["13837264738", index: 0, input: "13837264738"]
+        var str = "13837264738heihei";
+        //结果：["13837264738", index: 0, input: "13837264738heihei"]
+        var reg = /^13[0-9]{9}$/;    //{9}严格出现九次
+        var str = "13837264738";
+        //结果：["13837264738", index: 0, input: "13837264738"]
+        var str = "ddd13837264738heihei";
+        //结果：null
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

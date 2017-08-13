@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var f1 = function () {
+            console.log('f1f1f1');
+        }
+        f1();
+
+        //匿名函数，好处：本身不会被同名变量污染
+        (function (name) {
+            console.log('姓名：' + name);
+        })('dancheng');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

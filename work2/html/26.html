@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var dv = document.getElementsByTagName('div')[0];
+            //点击div，把其内部的信息追加给父级页面
+            dv.onclick = function () {
+                //opener表示父级页面
+                opener.document.getElementsByTagName('h2')[0].innerHTML = this.innerHTML;
+            }
+        }
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>son page</h2>
+    <div>hello</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>创建子集页面</h2>
+    <!--
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+    -->
+</body>
+<script type="text/javascript">
+    var color = ['blue', 'pink', 'orange'];
+    var content = ['蓝色', '粉色', '橙色'];
+    var ull = document.createElement('ul');
+    for(var k in color){
+        var lii = document.createElement('li');
+        lii.setAttribute('mean', content[k]);
+        var txt = document.createTextNode(color[k]);
+        lii.appendChild(txt);
+        ull.appendChild(lii);
+    }
+    document.body.appendChild(ull);
+</script>
+</html>

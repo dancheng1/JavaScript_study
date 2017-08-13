@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {width: 300px; height: 2000px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>事件对象阻止浏览器默认动作（form表单提交动作）</h2>
+        <p>用户名<input type="text" name="username" id="username" ></p>
+        <p>密码<input type="password" name="userpwd" ></p>
+        <p>邮箱<input type="text" name="useremail" ></p>
+        <p><input type="submit" value="注册"></p>
+</body>
+</html>
+<script type="text/javascript">
+    var username = document.getElementById('username');
+    username.addEventListener('keyup', function (evt) {
+        //感知被触发键盘信息
+        var num = evt.keyCode;
+        if(num == 37){
+            console.log('左');
+        } else if(num == 38){
+            console.log('上');
+        } else if(num == 39){
+            console.log('右');
+        } else if(num == 40){
+            console.log('下');
+        }
+    });
+</script>

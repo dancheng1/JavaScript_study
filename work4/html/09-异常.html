@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //异常处理
+        var title   = "weather";
+        var content = "大家在一起学习";
+
+        try{
+            console.log(title);
+            console.log(content);
+            var obj = new eval();
+            console.log('beijing');//上边代码出现错误，后续的代码(本行)不给执行
+        }catch(ex){
+            console.log("具体错误:"+ex.message);
+        }finally{
+            console.log('2015/3/23 15:09');
+            console.log('中腾大厦');
+        }
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

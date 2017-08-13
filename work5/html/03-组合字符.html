@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /\d+/g;    //表示数字[0-9]
+        var str = "2017-08-12";
+        //结果：(3) ["2017", "08", "12"]
+
+        var reg = /\D+/g;    //表示非数字[^0-9]
+        var str = "2017-08-12";
+        //结果：(2) ["-", "-"]
+
+        var reg = /\w+/g;    //表示字母、数字、下划线其中一个[a-zA-Z0-9_]
+        var str = "_Tom2015@163.com";
+        //结果：(3) ["_Tom2015", "163", "com"]
+
+        var reg = /\W+/g;    //非字母、数字、下划线
+        var str = "_Tom2015@163.com";
+        //结果：(2) ["@", "."]
+
+        var reg = /\w+\s+\w+/;   //\s表示空格
+        var str = "hello    biejing";
+        //结果：["hello    biejing", index: 0, input: "hello    biejing"]
+
+        var reg = /\bis\b/;
+        var str = "this is a bread";
+        //结果：["is", index: 5, input: "this is a bread"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+        //console.log(rst[1]);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

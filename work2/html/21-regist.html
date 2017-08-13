@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {width: 300px; height: 2000px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>事件对象阻止浏览器默认动作（form表单提交动作）</h2>
+    <form action="21.php" method="post">
+        <p>用户名<input type="text" name="username" ></p>
+        <p>密码<input type="password" name="userpwd" ></p>
+        <p>邮箱<input type="text" name="useremail" ></p>
+        <p><input type="submit" value="注册"></p>
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    var fm = document.getElementsByTagName('form')[0];
+    fm.addEventListener('submit', function (evt) {
+        alert('邮箱格式不正确');
+        //return false;   //dom1事件的阻止form表单提交
+        evt.preventDefault();   //dom2级事件的阻止foem表单提交
+    });
+</script>

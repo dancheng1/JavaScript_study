@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>dom2级事件取消</h2>
+    <div style="width: 300px; height: 200px; background: blue;">事件取消</div>
+    <input type="button" value="取消" onclick="cancel()">
+</body>
+</html>
+<script type="text/javascript">
+    //事件取消要求：1、有名函数设置事件
+    //            2、设置和取消的参数完全一致
+    //dom2级事件设置简单使用
+    var dv = document.getElementsByTagName('div')[0];
+    function cancel() {
+        dv.removeEventListener('mouseover', null);
+    }
+    //dv.addEventListener('click', 处理 有名/匿名函数);
+    dv.addEventListener('click', function () {
+        //this 代表div的元素节点对象
+        dv.style.backgroundColor = "pink";
+        this.style.width = "400px";
+    });
+    
+    function f1() {
+        console.log(111);
+    }
+    function f2() {
+        console.log(222);
+    }
+    function f3() {
+        console.log(333);
+    }
+    //为同一个div对象设置多个mouseover事件
+    dv.addEventListener('mouseover', f1);
+    dv.addEventListener('mouseover', f2);
+    dv.addEventListener('mouseover', f3);
+</script>

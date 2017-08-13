@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var cat = {name:'tom', climb:function () {
+            console.log(this.name + '在爬树');
+        }};
+        cat.climb();
+
+        var dog = {name:'旺财', hobby:'看家'};
+        //使用dog调用cat的方法
+        dog.pa = cat.climb;   //为climb增加一个别名pa
+        dog.pa;
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>创建子集页面</h2>
+    <ul>
+        <li mean="热情">red</li>
+        <li mean="冷静">blue</li>
+        <li mean="生机">green</li>
+    </ul>
+</body>
+</html>

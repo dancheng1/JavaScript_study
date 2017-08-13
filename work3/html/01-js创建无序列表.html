@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //作用域
+        var title = "链条";
+        console.log("new:" + title);
+        function f1() {
+            console.log("f1:" + title);
+            function f2() {
+                console.log("f2:" + title);
+                function f3() {
+                    console.log("f3:" + title);
+                }
+                f3();
+            }
+            f2();
+        }
+        f1();
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

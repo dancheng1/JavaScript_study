@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>属性结点获取</h2>
+    <input  type="text"  name="username" id="username" value="tom"  class="orange" />
+    <input type="button" value="修改属性" onclick="f1()">
+</body>
+</html>
+<script type="text/javascript">
+    var username = document.getElementById('username');
+    //获取username的全部属性
+    var attrs = username.attributes;
+    console.log(attrs);
+    console.log(attrs.id);
+    console.log(attrs.class);
+    console.log(username.nodeType);
+    //nodeType 判断结点类型  1->元素结点   2->属性结点   3->文本结点   9->document结点
+</script>

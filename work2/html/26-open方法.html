@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function newpage() {
+            //window.open(被显示页面的名字， 页面打开方式， 页面参数);
+            //页面打开方式：_self 在本窗口打开页面   _blank 在新窗口打开页面  _top frame的name属性值
+            window.open('26.html', '_blank', "width=573, height=275, directories=yes");
+        }
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2>创建子集页面</h2>
+    <input type="button" value="创建" onclick="newpage()" >
+</body>
+</html>

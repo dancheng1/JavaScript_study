@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>属性值操作</h2>
+    <a href="http://www.baidu.com"  addr='beijing' target="_blank">百度</a>
+    <input type="button" value="修改属性" onclick="f1()">
+</body>
+</html>
+<script type="text/javascript">
+    var baidu = document.getElementsByTagName('a')[0];
+    //获得属性的信息
+    console.log(baidu.href);
+    console.log(baidu.target);
+    console.log(baidu.addr);
+    console.log('\n');
+    console.log(baidu.getAttribute('addr'));
+    console.log(baidu.getAttribute('target'));
+    console.log(baidu.getAttribute('href'));
+    console.log('----------------------------------');
+    console.log('----------------------------------');
+    
+    //设置属性的信息
+    function f1() {
+        baidu.href = "http://www.163.com";
+        baidu.target = "uuuu";
+        //baidu.addr = "tianjin"   //这样设置没有效果
+        //属性修改，有就更新，没有就创建
+        baidu.setAttribute('addr', "shanghai");
+        baidu.setAttribute('height', "170");
+    }
+</script>

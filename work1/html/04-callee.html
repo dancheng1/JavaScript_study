@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //求n的阶层
+        function jc(n) {
+            if(n == 1){
+                return 1;
+            } else {
+                return n * arguments.callee(n - 1);
+            }
+        }
+        console.log(jc(6));
+        var j = jc;    //把jc的引用传递给变量j一份，使得jc也可以当做函数调用
+        jc = null;     //把jc给销毁避免后面代码使用
+        console.log(j(4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

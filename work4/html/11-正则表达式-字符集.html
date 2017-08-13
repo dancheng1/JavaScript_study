@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //创建一个正则模式
+        //[0-9]匹配
+        var reg = /[0-9]/
+        var str = "2017-8-12";
+        //结果：["2", index: 0, input: "2017-8-12"]
+
+        var reg = /[5-7]/
+        var str = "1997";
+        //结果：["7", index: 3, input: "1997"]
+
+        var reg = /[a-e]/;
+        var str = "hello";
+        //结果：["e", index: 1, input: "hello"]
+
+        var reg = /[A-G]/;
+        var str = "World";
+        //结果：null
+
+        var reg = /[ptrdx]/;
+        var str = "computer";
+        //结果：["p", index: 3, input: "computer"]
+
+        var reg = /[a-zA-Z0-9_-]/;
+        var str = "@##$%^&*(_#@FJD";
+        //结果：["_", index: 9, input: "@##$%^&*(_#@FJD"]
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

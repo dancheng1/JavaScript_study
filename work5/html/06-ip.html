@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //192.33.65.241
+        //第一段：1-223
+        //第二段：1-255
+        //第三段：1-255
+        //第四段：1-255
+        var reg = /^([1-9]|[1-9]\d|1\d\d|2[01]\d|22[0-3])(\.([1-9]|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])){3}$/;
+        str = "192.33.65.241";
+
+        var res = str.match(reg);
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

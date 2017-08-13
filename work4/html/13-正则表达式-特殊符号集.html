@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var reg = /.*/;
+        var str = "dasda^%&%*lklJDS";
+        //结果：["dasda^%&%*lklJDS", index: 0, input: "dasda^%&%*lklJDS"]
+
+        var reg = /milk|fish/;
+        var str = "cat like eat fish";
+        //结果：["fish", index: 13, input: "cat like eat fish"]
+        var str = "cat like eat milk and fish";
+        //结果：["milk", index: 13, input: "cat like eat milk and fish"]
+
+        var reg = /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/;
+        var str = "123.206.94.112";
+        //结果：["123.206.94.112", index: 0, input: "123.206.94.112"]
+        var str = "123.206.94";
+        //结果：null
+
+        //字符串.match(正则)
+        var rst = str.match(reg);
+        console.log(rst);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

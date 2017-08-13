@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function Wolf() {
+            this.eye = "闪闪发光";
+        }
+        var seven = new Wolf();
+        function Dog() {
+            this.tail = "摇头摆尾";
+        }
+        Dog.prototype = seven;
+        var wangcai = new Dog();
+        console.log(wangcai.eye);
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

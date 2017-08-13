@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>兄弟结点获取</h2>
+    <ul>
+        <li>red</li>
+        <li>blue</li>
+        <li>green</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    var blue = document.getElementsByTagName('li')[1];
+    console.log(blue);
+    console.log(blue.parentNode);
+    console.log(blue.parentNode.parentNode);
+    console.log(blue.parentNode.parentNode.parentNode);
+    console.log(blue.parentNode.parentNode.parentNode.parentNode);
+    console.log(blue.parentNode.parentNode.parentNode.parentNode.parentNode);
+</script>

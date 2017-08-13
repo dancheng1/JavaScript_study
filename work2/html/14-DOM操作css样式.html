@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>操作css样式</h2>
+    <div style="width: 300px; height: 200px; background: blue;">利用DOM操作css</div>
+    <input type="button" value="获取css" onclick="f1()" /> <br/>
+    <input type="button" value="设置css" onclick="f2()" /> <br/>
+</body>
+</html>
+<script type="text/javascript">
+    var dv = document.getElementsByTagName('div')[0];
+    function f1() {
+        //获取
+        console.log(dv.style.width);
+        console.log(dv.style.height);
+        console.log(dv.style.backgroundColor);
+    }
+    function f2() {
+        //设置（有就更新，没有就创建
+        dv.style.color = "red";
+        dv.style.backgroundColor = "lightgreen";
+        dv.style.width = "600px";
+    }
+</script>

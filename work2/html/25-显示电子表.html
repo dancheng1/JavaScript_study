@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function showtime() {
+            //创建事件对象，获得当前时间，并在页面上显示
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth();
+            var riqi = d.getDate();
+
+            var hour = d.getHours();
+            var minute = d.getMinutes();
+            var second = d.getSeconds();
+            var timeinfo = year + "-" + month + "-" + riqi + " " + hour + ":" + minute + ":" + second;
+            //innerHTML可以设置、获取一个标签内部应有的信息
+            document.getElementsByTagName('h2')[0].innerHTML = timeinfo;
+        }
+        //showtime函数需要每间隔一秒就执行一次
+        window.onload = function () {
+            //setInterval（全局变量处理）
+            mytime = setInterval("showtime()", 1000);
+        }
+        function cancel() {
+            clearInterval(mytime);
+        }
+    </script>
+    <style type="text/css">
+        div {width: 300px; height: 200px; background: lightblue;}
+    </style>
+</head>
+<body>
+    <h2></h2>
+    <input type="button" value="取消" onclick="cancel()" >
+</body>
+</html>

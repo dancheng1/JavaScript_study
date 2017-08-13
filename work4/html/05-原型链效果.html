@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function Cat(){
+            this.eat = "fish";
+            this.color = "white";
+        }
+        var kitty = new Cat();
+        kitty.color = "pink";
+
+        function Tiger(){
+            this.weapon = "猛虎扑食";
+            this.color = "brown";
+        }
+        Tiger.prototype = kitty;
+        var north = new Tiger();
+        north.color = "gold";
+
+        function Wolf(){
+            this.eye = "闪闪发光";
+            this.color = "red";
+        }
+        Wolf.prototype = north;
+        var seven = new Wolf();
+
+        function Dog(){
+            this.tail = "摇头摆尾";
+        }
+        Dog.prototype = seven;
+
+        var wangcai = new Dog();
+        console.log(wangcai.color);
+
+        console.log(wangcai.constructor);
+    </script>
+</head>
+<body>
+<h2>创建子集页面</h2>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>结点的创建和追加</h2>
+</body>
+</html>
+<script type="text/javascript">
+    /**
+     <ul>
+     <li mean="热情">red</li>
+     <li mean="冷静">blue</li>
+     <li mean="生机">green</li>
+     </ul>
+    */
+    var color = ['red', 'blue', 'green'];
+    var color_mean = ['热情', '冷静', '生机'];
+
+    //创建各种节点
+    var ull = document.createElement('ul');
+    for(var k in color){
+        var lii = document.createElement('li');
+        lii.setAttribute('mean', color_mean[k]);
+        var txt = document.createTextNode(color[k]);
+        //结点追加
+        lii.appendChild(txt);
+        ull.appendChild(lii);
+    }
+    //document.getElementsByTagName('body')[0].appendChild(ull);
+    document.body.appendChild(ull);
+</script>

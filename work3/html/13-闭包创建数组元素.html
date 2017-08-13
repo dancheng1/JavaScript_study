@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //创建数组元素
+        var arr = new Array();
+        for(var i = 0; i < 4; i++){
+            arr[i] = f1(i);
+        }
+        function f1(n) {
+            function f2() {
+                console.log(n);
+            }
+            return f2;
+        }
+        arr[2]();
+        arr[0]();
+        arr[3]();
+        arr[1]();
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

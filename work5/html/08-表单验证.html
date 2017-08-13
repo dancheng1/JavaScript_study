@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <script type="text/javascript">
+        window.onload = function(){
+            //form表单的提交事件，用于验证表单域项目
+            var fm = document.getElementsByTagName('form')[0];
+            fm.onsubmit = function(){
+                //验证邮箱
+                var email = document.getElementById('useremail').value;
+                var reg = /^\w[a-zA-Z0-9_\.]{4,9}@\w+(\.[a-z]+)+$/;
+                if(email.match(reg)===null){
+                    alert('邮箱格式不正确');
+                    return false;//停止浏览器提交动作
+                }
+                //
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>正则验证表单</h2>
+<form method="post" action="08.php">
+    <p>用户名:<input type="text" name="username"></p>
+    <p>邮箱：<input type="text" name="useremail" id="useremail"></p>
+    <p><input type="submit" value="注册"></p>
+</form>
+</body>
+</html>

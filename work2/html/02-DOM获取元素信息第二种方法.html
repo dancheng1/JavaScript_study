@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <h2>获取元素结点</h2>
+    <input type="text" id="username" value="tom" /> <br/>
+    <input type="text" id="useremail" value="tom@163.com"> <br/>
+    <div>today is very good</div>
+</body>
+</html>
+<script type="text/javascript">
+    //1、document.getElementsByTagName(), tag标签获取属性值
+    var hh = document.getElementsByTagName('h2');
+    //通过getElementsByTagName获得的事一个数组（即使只有一个结点，也用数组返回）
+    console.log(hh[0]);
+
+    var input = document.getElementsByTagName('input');
+    console.log(input);
+    console.log(input[0]);
+</script>
